@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-cream-50 text-cocoa-700 font-sans antialiased; }
+  h1, h2, h3, h4 { @apply font-display text-cocoa-900; }
+  ::selection { @apply bg-blush-200; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50 active:scale-[0.98]; }
+  .btn-primary { @apply btn bg-cocoa-700 text-cream-50 shadow-soft hover:bg-cocoa-900 hover:shadow-lift; }
+  .btn-pink { @apply btn bg-blush-500 text-white shadow-soft hover:bg-blush-400 hover:shadow-lift; }
+  .btn-outline { @apply btn border border-cocoa-300/60 bg-white text-cocoa-700 hover:border-cocoa-500 hover:bg-cream-100; }
+  .btn-ghost { @apply btn text-cocoa-700 hover:bg-cream-200; }
+  .btn-danger { @apply btn bg-red-600 text-white hover:bg-red-700; }
+  .btn-sm { @apply px-3.5 py-1.5 text-xs; }
+
+  .card { @apply rounded-3xl border border-cream-200 bg-white shadow-soft; }
+  .card-hover { @apply card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift; }
+
+  .label { @apply mb-1.5 block text-sm font-medium text-cocoa-700; }
+  .input { @apply w-full rounded-2xl border border-cream-200 bg-cream-50 px-4 py-2.5 text-sm text-cocoa-900 placeholder:text-cocoa-300 outline-none transition focus:border-blush-400 focus:bg-white focus:ring-4 focus:ring-blush-100; }
+  .field-error { @apply mt-1 text-xs text-red-600; }
+
+  .badge { @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold; }
+  .badge-green { @apply badge bg-emerald-100 text-emerald-700; }
+  .badge-amber { @apply badge bg-amber-100 text-amber-700; }
+  .badge-red { @apply badge bg-red-100 text-red-700; }
+  .badge-gray { @apply badge bg-gray-100 text-gray-600; }
+  .badge-pink { @apply badge bg-blush-100 text-blush-500; }
+  .badge-blue { @apply badge bg-sky-100 text-sky-700; }
+
+  .th { @apply whitespace-nowrap px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-cocoa-400; }
+  .td { @apply px-4 py-3 text-sm align-middle; }
+}
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.fade-up { animation: fadeUp 0.5s ease both; }
